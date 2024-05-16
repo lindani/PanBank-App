@@ -39,22 +39,22 @@ export const formatDateTime = (dateString: Date) => {
   };
 
   const formattedDateTime: string = new Date(dateString).toLocaleString(
-    "en-US",
+    "en-ZA",
     dateTimeOptions
   );
 
   const formattedDateDay: string = new Date(dateString).toLocaleString(
-    "en-US",
+    "en-ZA",
     dateDayOptions
   );
 
   const formattedDate: string = new Date(dateString).toLocaleString(
-    "en-US",
+    "en-ZA",
     dateOptions
   );
 
   const formattedTime: string = new Date(dateString).toLocaleString(
-    "en-US",
+    "en-ZA",
     timeOptions
   );
 
@@ -67,9 +67,10 @@ export const formatDateTime = (dateString: Date) => {
 };
 
 export function formatAmount(amount: number): string {
-  const formatter = new Intl.NumberFormat("en-US", {
+  const locale = "en-ZA"; // Hardcoded South African locale
+  const formatter = new Intl.NumberFormat(locale, {
     style: "currency",
-    currency: "USD",
+    currency: "ZAR", // South African Rand
     minimumFractionDigits: 2,
   });
 
